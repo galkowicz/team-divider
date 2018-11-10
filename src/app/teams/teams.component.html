@@ -1,0 +1,14 @@
+<div class="teams">
+  <div class="teams__team teams__team--team-a">
+    <div *ngFor="let player of teamA" class="player">
+      <button mat-raised-button color="primary" (click)="select({player: player, team: 'teamA'})">{{player.name}}
+      </button>
+    </div>
+  </div>
+
+  <div class="teams__team teams__team--team-b">
+    <div *ngFor="let player of teamB" class="player">
+      <button mat-raised-button color="white" (click)="select({player: player, team: 'teamB'})">{{player.name}}</button>
+    </div>
+  </div>
+</div>

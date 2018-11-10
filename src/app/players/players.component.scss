@@ -1,0 +1,38 @@
+.players button,
+.players a {
+  margin-right: 8px;
+}
+
+.mat-slide-toggle {
+  padding: .5rem;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 6rem;
+}
+
+.mat-input-element {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 7px 20px;
+  margin: 6px 0;
+  font-size: 1rem;
+
+}
+
+.mat-raised-button {
+  &.add {
+    margin-left: .5rem;
+  }
+}
+
+.add-player {
+  padding-bottom: 1rem;
+}
+
+.delete {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+}

@@ -1,0 +1,19 @@
+.mat-raised-button {
+  &.mat-white {
+    background-color: aliceblue;
+    color: #424242;
+  }
+}
+
+
+.teams {
+  display: grid;
+  grid-template-columns: auto auto;
+  &__team {
+    //display: grid;
+    //grid-template-columns: 1fr 1fr 1fr;
+    //.player {
+    //  padding: 2px;
+    //}
+  }
+}
