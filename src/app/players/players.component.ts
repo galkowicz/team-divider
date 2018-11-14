@@ -24,12 +24,15 @@ export class PlayersComponent implements OnInit {
   }
 
   getPlayers(): void {
-    this.playerService.data
-      .subscribe((data) => {
-        this.players = data.players;
-        this.teamA = data.teamA;
-        this.teamB = data.teamB;
-      });
+    this.playerService.players$.subscribe( players => {
+      this.players = players;
+    });
+    this.playerService.teamA$.subscribe( teamA => {
+      this.teamA = teamA;
+    });
+    this.playerService.teamB$.subscribe( teamB => {
+      this.teamB = teamB;
+    });
   }
 
   add(name: string): void {
@@ -37,7 +40,7 @@ export class PlayersComponent implements OnInit {
     if (!name) {
       return;
     }
-    this.playerService.addPlayer({name, id: '_' + Math.random().toString(36).substr(2, 9)});
+    this.playerService.addPlayer(name);
   }
 
   select(player: Player) {
