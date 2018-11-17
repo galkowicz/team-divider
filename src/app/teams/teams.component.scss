@@ -5,7 +5,6 @@
   }
 }
 
-
 .teams {
   display: grid;
   grid-template-columns: auto auto;
@@ -16,4 +15,8 @@
     //  padding: 2px;
     //}
   }
+}
+
+.team-player {
+  padding: .1rem;
 }

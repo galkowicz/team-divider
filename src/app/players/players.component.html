@@ -8,9 +8,9 @@
   </button>
 </div>
 
-<mat-grid-list cols="4" rowHeight="2rem">
+<mat-grid-list cols="4" rowHeight="2rem" gutterSize="0.5rem">
   <mat-grid-tile [colspan]="1" [rowspan]="1" *ngFor="let player of players" class="player">
-    <button mat-raised-button color="accent" (click)="select(player)">{{player.name}}</button>
+    <button mat-raised-button class="players-button" (click)="select(player)">{{player.name}}</button>
     <button class="delete" title="delete player" (click)="delete(player)">x</button>
   </mat-grid-tile>
 </mat-grid-list>

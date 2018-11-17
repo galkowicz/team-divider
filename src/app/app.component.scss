@@ -3,5 +3,27 @@ body {
 }
 
 app-root {
-  background-color: #80b981;
+  //background-color: #80b981;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.main {
+  ::after {
+    content: "";
+    background: url(../assets/images/grass.jpg);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+/deep/ .mat-grid-tile {
+  border-radius: .7rem;
 }

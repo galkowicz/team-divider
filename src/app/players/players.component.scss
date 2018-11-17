@@ -9,11 +9,22 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   width: 6rem;
+  /deep/ &-bar {
+    background-color: #7b1fa2; // #0d8e4f
+  }
+}
+
+.players-button {
+  background-color: #0d8e4f;
+}
+
+/deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: aliceblue;
 }
 
 .mat-input-element {
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 1rem;
   padding: 7px 20px;
   margin: 6px 0;
   font-size: 1rem;
@@ -35,4 +46,5 @@
   width: 100%;
   height: 100%;
   font-size: 1rem;
+  margin-left: -4px;
 }
