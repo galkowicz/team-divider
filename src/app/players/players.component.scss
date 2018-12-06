@@ -9,6 +9,7 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   width: 6rem;
+
   /deep/ &-bar {
     background-color: #7b1fa2; // #0d8e4f
   }
@@ -47,4 +48,13 @@
   height: 100%;
   font-size: 1rem;
   margin-left: -4px;
+}
+
+/deep/ .mat-button-wrapper {
+  text-overflow: ellipsis;
+  width: 44px; // TODO remove hard coded numbers
+  height: 24px; // TODO remove hard coded numbers
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
 }

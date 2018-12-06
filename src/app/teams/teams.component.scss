@@ -8,6 +8,8 @@
 .teams {
   display: grid;
   grid-template-columns: auto auto;
+  overflow-y: scroll;
+  height: 60vh;
   &__team {
     //display: grid;
     //grid-template-columns: 1fr 1fr 1fr;

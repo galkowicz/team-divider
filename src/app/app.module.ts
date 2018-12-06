@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {MatButtonModule, MatInputModule, MatIconModule, MatSlideToggleModule, MatGridListModule} from '@angular/material';
+import {MatButtonModule, MatInputModule, MatIconModule, MatSlideToggleModule, MatGridListModule, MatCardModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
@@ -29,6 +29,7 @@ import {TeamsComponent} from './teams/teams.component';
     MatGridListModule,
     FormsModule,
     MatInputModule,
+    MatCardModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase, 'team-divider'),
     AngularFireStorageModule,
