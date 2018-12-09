@@ -13,6 +13,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {PlayersComponent} from './players/players.component';
 import {TeamsComponent} from './teams/teams.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {TeamsComponent} from './teams/teams.component';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase, 'team-divider'),
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]
