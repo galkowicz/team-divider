@@ -9,16 +9,24 @@
   display: grid;
   grid-template-columns: auto auto;
   overflow-y: scroll;
-  height: 60vh;
+  height: 64vh;
+
   &__team {
-    //display: grid;
-    //grid-template-columns: 1fr 1fr 1fr;
-    //.player {
-    //  padding: 2px;
-    //}
+    direction: rtl;
   }
+
 }
 
 .team-player {
   padding: .1rem;
+
+  button {
+    height: 2.2rem;
+    width: 8rem;
+  }
+
+  /deep/ .mat-button-wrapper {
+    width: 6rem;
+  }
+
 }
