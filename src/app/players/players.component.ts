@@ -11,19 +11,18 @@ export class PlayersComponent implements OnInit {
   players: Player[];
   teamA: Player[];
   teamB: Player[];
-  currentTeam = 'teamA';
-  toggleSlider = 'left';
-  checked = false;
+  currentTeam;
+  checked: boolean;
 
   constructor(private playerService: PlayerService) {
   }
 
   ngOnInit() {
     this.playerService.loadAll();
-    this.getPlayers();
+    this.getInitialData();
   }
 
-  getPlayers(): void {
+  getInitialData(): void {
     this.playerService.players$.subscribe( players => {
       this.players = players;
     });
@@ -32,6 +31,10 @@ export class PlayersComponent implements OnInit {
     });
     this.playerService.teamB$.subscribe( teamB => {
       this.teamB = teamB;
+    });
+    this.playerService.toggleState$.subscribe( toggleState => {
+      this.checked = toggleState[0].state === 'teamB';
+      this.currentTeam = toggleState[0].state;
     });
   }
 
@@ -60,8 +63,8 @@ export class PlayersComponent implements OnInit {
 
   toggle() {
     this.currentTeam = 'teamA' === this.currentTeam ? 'teamB' : 'teamA';
-    this.toggleSlider = 'left' === this.toggleSlider ? 'right' : 'left';
     this.checked = !this.checked;
+    this.playerService.toggle(this.currentTeam);
   }
 
 }

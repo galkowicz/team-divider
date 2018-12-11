@@ -18,7 +18,7 @@
 <mat-slide-toggle
   (change)="toggle()"
   [checked]="checked">
-  {{toggleSlider}}
+  {{currentTeam === 'teamA' ? 'right' : 'left'}}
 </mat-slide-toggle>
 
 <app-teams [teamA]="teamA" [teamB]="teamB" (selected)="onPlayerClick($event)"></app-teams>
