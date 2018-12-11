@@ -7,6 +7,12 @@
     </div>
   </div>
 
+  <div class="teams__team">
+    <div *ngFor="let player of biggestTeam; let i = index" class="team-index">
+      <span class="number" mat-raised-button>{{i+1}}</span>
+    </div>
+  </div>
+
   <div class="teams__team teams__team--team-b">
     <div *ngFor="let player of teamB" class="team-player">
       <button mat-raised-button color="white" (click)="select({player: player, team: 'teamB'})">{{player.name}}</button>

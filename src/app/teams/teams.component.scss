@@ -7,7 +7,7 @@
 
 .teams {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   overflow-y: scroll;
   height: 64vh;
 
@@ -29,4 +29,12 @@
     width: 6rem;
   }
 
+}
+
+.team-index {
+  padding: .1rem;
+  .number {
+    height: 2.2rem;
+    display: inline-block;
+  }
 }
