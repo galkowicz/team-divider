@@ -3,7 +3,6 @@ body {
 }
 
 app-root {
-  //background-color: #80b981;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -11,6 +10,8 @@ app-root {
 }
 
 .main {
+  text-align:center;
+  margin: 1.4rem;
   ::after {
     content: "";
     background: url(../assets/images/grass.jpg);
