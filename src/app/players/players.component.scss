@@ -1,12 +1,13 @@
 .players {
   direction: rtl;
+  margin-top: 0.3rem;
 
   .delete {
-    background-color: red;
+    background-color: #f44336;
     width: 2rem;
     height: 120%;
     font-size: 1rem;
-    margin-left: -4px;
+    font-weight: 900;
   }
 
   &__select {
@@ -14,19 +15,34 @@
   }
 }
 
+.add-player {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
 .mat-slide-toggle {
   margin: 1rem;
   border: 1px solid #ccc;
   border-radius: 2px;
-  width: 6rem;
 
   /deep/ &-bar {
-    background-color: #7b1fa2; // #0d8e4f
+    background-color: #7b1fa2;
+    width: 5rem !important;
+    height: 2rem !important;
+    border-radius: 1rem !important;
+  }
+
+  /deep/ &-thumb {
+    width: 2rem !important;
+    height: 2rem !important;
+    &-container {
+      top: 0 !important;
+    }
   }
 }
 
-.players-button {
-  background-color: #0d8e4f;
+/deep/ .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb-container {
+  transform: translate3d(3rem,0,0) !important;
 }
 
 /deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
@@ -44,20 +60,17 @@
 
 .mat-raised-button {
   &.add {
-    margin-left: .5rem;
+    margin-left: 1.5rem;
   }
 }
 
-.add-player {
-  padding-bottom: 1rem;
-}
-
-
-/deep/ .mat-button-wrapper {
-  text-overflow: ellipsis;
-  width: 44px; // TODO remove hard coded numbers
-  height: 24px; // TODO remove hard coded numbers
-  overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
+.players-button {
+  /deep/ .mat-button-wrapper {
+    text-overflow: ellipsis;
+    width: 3.5rem;
+    height: 1.7rem;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+  }
 }

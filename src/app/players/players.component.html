@@ -1,8 +1,5 @@
 <div class="add-player">
-  <label>Name:
-    <input #playerName matInput (keyup.enter)="add(playerName.value); playerName.value=''"/>
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
+    <input class="add-player__name" #playerName matInput (keyup.enter)="add(playerName.value); playerName.value=''"/>
   <button mat-raised-button (click)="add(playerName.value); playerName.value=''" class="add">
     add
   </button>
@@ -10,15 +7,14 @@
 
 <mat-grid-list class="players" *ngIf="players && players.length > 0" cols="3" rowHeight="2rem" gutterSize="0.5rem">
   <mat-grid-tile [colspan]="1" [rowspan]="1" *ngFor="let player of players" class="player">
-    <button mat-raised-button class="players-button" (click)="select(player)">{{player.name}}</button>
+    <button mat-raised-button class="players-button" color="accent" (click)="select(player)">{{player.name}}</button>
     <button class="delete" title="delete player" (click)="delete(player)">x</button>
   </mat-grid-tile>
 </mat-grid-list>
 
-<mat-slide-toggle
+<mat-slide-toggle aria-label="null"
   (change)="toggle()"
   [checked]="checked">
-  {{currentTeam === 'teamA' ? 'right' : 'left'}}
 </mat-slide-toggle>
 
 <app-teams [teamA]="teamA" [teamB]="teamB" (selected)="onPlayerClick($event)"></app-teams>
