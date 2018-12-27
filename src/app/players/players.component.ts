@@ -8,13 +8,17 @@ import {PlayerService} from '../player.service';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
+
+  constructor(private playerService: PlayerService) {
+  }
   players: Player[];
   teamA: Player[];
   teamB: Player[];
   currentTeam;
   checked: boolean;
 
-  constructor(private playerService: PlayerService) {
+  static focusInput(element) {
+    element.focus();
   }
 
   ngOnInit() {
@@ -23,19 +27,24 @@ export class PlayersComponent implements OnInit {
   }
 
   getInitialData(): void {
-    this.playerService.players$.subscribe( players => {
+    this.playerService.players$.subscribe(players => {
       this.players = players;
     });
-    this.playerService.teamA$.subscribe( teamA => {
+    this.playerService.teamA$.subscribe(teamA => {
       this.teamA = teamA;
     });
-    this.playerService.teamB$.subscribe( teamB => {
+    this.playerService.teamB$.subscribe(teamB => {
       this.teamB = teamB;
     });
-    this.playerService.toggleState$.subscribe( toggleState => {
+    this.playerService.toggleState$.subscribe(toggleState => {
       this.checked = toggleState[0].state === 'teamB';
       this.currentTeam = toggleState[0].state;
     });
+  }
+
+  addHandler(name: string, playerInput) {
+    this.add(name);
+    PlayersComponent.focusInput(playerInput);
   }
 
   add(name: string): void {

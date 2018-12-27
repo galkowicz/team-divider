@@ -1,6 +1,6 @@
 <div class="add-player">
-    <input class="add-player__name" #playerName matInput (keyup.enter)="add(playerName.value); playerName.value=''"/>
-  <button mat-raised-button (click)="add(playerName.value); playerName.value=''" class="add">
+    <input class="add-player__name" #playerName matInput (keyup.enter)="addHandler(playerName.value, playerName); playerName.value=''"/>
+  <button mat-raised-button (click)="addHandler(playerName.value, playerName); playerName.value=''" class="add">
     add
   </button>
 </div>
